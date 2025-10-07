@@ -7,7 +7,6 @@
     <title>Блог</title>
     <link rel="stylesheet" href="../nicepage.css" media="screen">
 <link rel="stylesheet" href="../Blog-Template.css" media="screen">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script class="u-script" type="text/javascript" src="../jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="../nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 7.13.9, nicepage.com">
@@ -129,63 +128,5 @@
     
     <footer class="u-align-center u-clearfix u-container-align-center u-footer u-grey-80 u-footer" id="footer"><div class="u-clearfix u-sheet u-sheet-1"></div></footer>
     <section class="u-backlink u-clearfix u-grey-80"></section>
-    
-    <!-- Social Media Widget -->
-    <div class="social-widget" id="socialWidget">
-      <a href="viber://chat?number=+37379123000" class="social-widget-item viber" data-tooltip="Написать в Viber">
-        <i class="fab fa-viber"></i>
-      </a>
-      <a href="https://t.me/carroute66" class="social-widget-item telegram" data-tooltip="Написать в Telegram">
-        <i class="fab fa-telegram-plane"></i>
-      </a>
-      <a href="https://wa.me/37379123000" class="social-widget-item whatsapp" data-tooltip="Написать в WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-      <button class="social-widget-item close" id="closeWidget" data-tooltip="Закрыть">
-        <i class="fas fa-times"></i>
-      </button>
-    </div>
-    
-    <!-- Social Widget JavaScript -->
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const socialWidget = document.getElementById('socialWidget');
-        const closeWidget = document.getElementById('closeWidget');
-        
-        // Check if widget was previously closed
-        if (localStorage.getItem('socialWidgetClosed') === 'true') {
-          socialWidget.style.display = 'none';
-        }
-        
-        // Close widget functionality
-        closeWidget.addEventListener('click', function() {
-          socialWidget.style.display = 'none';
-          localStorage.setItem('socialWidgetClosed', 'true');
-        });
-        
-        // Show widget after 3 seconds if not closed
-        if (localStorage.getItem('socialWidgetClosed') !== 'true') {
-          setTimeout(function() {
-            socialWidget.style.opacity = '0';
-            socialWidget.style.display = 'flex';
-            socialWidget.style.transition = 'opacity 0.5s ease';
-            setTimeout(function() {
-              socialWidget.style.opacity = '1';
-            }, 100);
-          }, 3000);
-        }
-        
-        // Add click tracking for analytics (optional)
-        const socialLinks = socialWidget.querySelectorAll('a');
-        socialLinks.forEach(function(link) {
-          link.addEventListener('click', function() {
-            const platform = this.classList.contains('viber') ? 'Viber' : 
-                           this.classList.contains('telegram') ? 'Telegram' : 'WhatsApp';
-            console.log('Social media click:', platform);
-            // You can add analytics tracking here
-          });
-        });
-      });
-    </script>
   
 </body></html>
